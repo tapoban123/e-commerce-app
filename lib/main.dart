@@ -1,7 +1,4 @@
-import "package:e_commerce_app/auth/login_page.dart";
 import "package:e_commerce_app/auth/sign_up_page.dart";
-import "package:e_commerce_app/features/home/home_page.dart";
-import "package:e_commerce_app/features/home_navigation/navigation_controller.dart";
 import "package:e_commerce_app/features/home_navigation/providers/navigation_notifier.dart";
 import "package:e_commerce_app/theme/custom_colors.dart";
 import "package:e_commerce_app/theme/custom_fonts.dart";

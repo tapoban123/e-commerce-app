@@ -32,7 +32,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
             const SizedBox(
               height: 30,
             ),
-            Text(
+            const Text(
               "Forgot Password",
               style: TextStyle(
                 fontSize: 36,
@@ -46,7 +46,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               padding: const EdgeInsets.symmetric(horizontal: 6.0),
               child: Column(
                 children: [
-                  Text(
+                  const Text(
                     "Please enter your email address. You will receive a link to create a new password via email",
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
