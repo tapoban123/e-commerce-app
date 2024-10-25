@@ -79,7 +79,9 @@ flutter:
     - assets/images/shopping_bag_colored.svg
     - assets/images/star.png
     - assets/images/colored_Star.png
+    - assets/images/search_icon.png 
     - assets/images/item_images/ 
+    - assets/images/sales/  
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

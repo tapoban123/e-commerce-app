@@ -7,6 +7,7 @@ class ImagePaths {
   static const String backArrow = "assets/images/back_arrow.png";
   static const String star = "assets/images/star.png";
   static const String coloredStar = "assets/images/colored_Star.png";
+  static const String searchIcon = "assets/images/search_icon.png";
 
   static const String homeSvg = "assets/images/home.svg";
   static const String homeColoredSvg = "assets/images/home_colored.svg";
@@ -23,7 +24,29 @@ class ImagePaths {
 
   static const String blouseImg = "assets/images/item_images/blouse.png";
   static const String tShirtImg = "assets/images/item_images/t_shirt.png";
-  static const String eveningDressImg = "assets/images/item_images/evening_dress.png";
-  static const String sportDressImg = "assets/images/item_images/sport_dress.png";
-  static const String sportDress2Img = "assets/images/item_images/sport_dress_2.png";
+  static const String eveningDressImg =
+      "assets/images/item_images/evening_dress.png";
+  static const String sportDressImg =
+      "assets/images/item_images/sport_dress.png";
+  static const String sportDress2Img =
+      "assets/images/item_images/sport_dress_2.png";
+
+  static const String salesAccessoriesImg =
+      "assets/images/sales/accessories.png";
+  static const String salesNewImg = "assets/images/sales/new.png";
+  static const String salesClothesImg = "assets/images/sales/clothes.png";
+  static const String salesShoesImg = "assets/images/sales/shoes.png";
+  static const String salesBlackImg = "assets/images/sales/black.png";
+  static const String salesHoodiesImg = "assets/images/sales/hoodies.png";
+  static const String salesNewCollectionImg =
+      "assets/images/sales/new_collection.png";
+  static const String salesSmallBannerImg =
+      "assets/images/sales/small_banner.png";
+
+  static const String salesBlouse2Img = "assets/images/sales/blouse2.png";
+  static const String salesSpanishImg = "assets/images/sales/spanish.png";
+  static const String salesTop1Img = "assets/images/sales/top1.png";
+  static const String salesTop2Img = "assets/images/sales/top2.png";
+  static const String salesTop3Img = "assets/images/sales/top3.png";
+  static const String salesTop4Img = "assets/images/sales/top4.png";
 }

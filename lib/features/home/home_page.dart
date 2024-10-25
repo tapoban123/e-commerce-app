@@ -1,7 +1,9 @@
 import 'package:e_commerce_app/features/home/widgets/item_card.dart';
+import 'package:e_commerce_app/features/home_navigation/providers/home_notifier.dart';
 import 'package:e_commerce_app/theme/custom_colors.dart';
 import 'package:e_commerce_app/utils/image_paths.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -62,7 +64,10 @@ class _HomePageState extends State<HomePage> {
                     left: 20,
                     bottom: 30,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Provider.of<HomeNotifier>(context, listen: false)
+                            .changeHomePageNumber(2);
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: CustomColors.redColor,
                         fixedSize: const Size(150, 50),
@@ -111,26 +116,32 @@ class _HomePageState extends State<HomePage> {
                       scrollDirection: Axis.horizontal,
                       children: [
                         ItemCard(
-                          imagePath: ImagePaths.blouseImg,
-                          smallText: "OVS",
-                          bigText: "Blouse",
-                          price: "\$ 30",
-                          onTap: () {},
-                        ),
-                        ItemCard(
-                          imagePath: ImagePaths.tShirtImg,
-                          smallText: "Mango Boy",
-                          bigText: "T-Shirt Sailing",
-                          price: "\$ 10",
-                          onTap: () {},
-                        ),
-                        ItemCard(
-                          imagePath: ImagePaths.sportDressImg,
-                          smallText: "Sitly",
-                          bigText: "Sport Dress",
-                          price: "\$ 19",
-                          onTap: () {},
-                        ),
+                        imagePath: ImagePaths.blouseImg,
+                        smallText: "OVS",
+                        bigText: "Blouse",
+                        price: "\$ 30",
+                        onTap: () {},
+                        numOfStars: 4,
+                        ratings: 11,
+                      ),
+                      ItemCard(
+                        imagePath: ImagePaths.tShirtImg,
+                        smallText: "Mango Boy",
+                        bigText: "T-Shirt Sailing",
+                        price: "\$ 10",
+                        onTap: () {},
+                        numOfStars: 5,
+                        ratings: 26,
+                      ),
+                      ItemCard(
+                        imagePath: ImagePaths.sportDressImg,
+                        smallText: "Sitly",
+                        bigText: "Sport Dress",
+                        price: "\$ 19",
+                        onTap: () {},
+                        numOfStars: 2,
+                        ratings: 5,
+                      ),
                       ],
                     ),
                   ),

@@ -1,4 +1,5 @@
-import "package:e_commerce_app/auth/sign_up_page.dart";
+import "package:e_commerce_app/features/home_navigation/navigation_controller.dart";
+import "package:e_commerce_app/features/home_navigation/providers/home_notifier.dart";
 import "package:e_commerce_app/features/home_navigation/providers/navigation_notifier.dart";
 import "package:e_commerce_app/theme/custom_colors.dart";
 import "package:e_commerce_app/theme/custom_fonts.dart";
@@ -27,6 +28,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (context) => NavigationNotifier(),
         ),
+        ChangeNotifierProvider(
+          create: (context) => HomeNotifier(),
+        ),
       ],
       builder: (context, child) => MaterialApp(
         title: "E-Commerce App",
@@ -41,7 +45,7 @@ class MyApp extends StatelessWidget {
           fontFamily: CustomFonts.metropolisFont,
           scaffoldBackgroundColor: CustomColors.scaffoldBackgroundColor,
         ),
-        home: const SignUpPage(),
+        home: const NavigationController(),
       ),
     );
   }

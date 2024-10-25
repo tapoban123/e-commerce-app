@@ -1,6 +1,6 @@
 import 'package:e_commerce_app/features/bag/bag_page.dart';
 import 'package:e_commerce_app/features/favorites/favorites_page.dart';
-import 'package:e_commerce_app/features/home/home_page.dart';
+import 'package:e_commerce_app/features/home_navigation/providers/home_notifier.dart';
 import 'package:e_commerce_app/features/home_navigation/providers/navigation_notifier.dart';
 import 'package:e_commerce_app/features/home_navigation/widgets/navigation_icon.dart';
 import 'package:e_commerce_app/features/profile/profile_page.dart';
@@ -33,13 +33,13 @@ class _NavigationControllerState extends State<NavigationController>
     super.initState();
   }
 
-  List<Widget> pages = const [
-    HomePage(),
-    ShopPage(),
-    BagPage(),
-    FavoritesPage(),
-    ProfilePage(),
-  ];
+  List<Widget> pages(BuildContext context) => [
+        homePages(context),
+        const ShopPage(),
+        const BagPage(),
+        const FavoritesPage(),
+        const ProfilePage(),
+      ];
 
   @override
   Widget build(BuildContext context) {
@@ -70,6 +70,10 @@ class _NavigationControllerState extends State<NavigationController>
                 iconText: "Home",
                 onTap: () {
                   navigationProvider.updatePageNumber(0);
+                  Provider.of<HomeNotifier>(
+                    context,
+                    listen: false,
+                  ).changeHomePageNumber(1);
                 },
               ),
               NavigationIcon(
@@ -118,7 +122,7 @@ class _NavigationControllerState extends State<NavigationController>
       ),
       body: IndexedStack(
         index: Provider.of<NavigationNotifier>(context).pageNumber,
-        children: pages,
+        children: pages(context),
       ),
     );
   }
