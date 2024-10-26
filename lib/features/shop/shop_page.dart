@@ -1,10 +1,11 @@
 import 'package:e_commerce_app/features/home_navigation/providers/navigation_notifier.dart';
+import 'package:e_commerce_app/features/shop/provider/sales_tab_provider.dart';
+import 'package:e_commerce_app/features/shop/widgets/sales_card.dart';
+import 'package:e_commerce_app/features/shop/widgets/sales_tab.dart';
 import 'package:e_commerce_app/theme/custom_colors.dart';
 import 'package:e_commerce_app/utils/common/back_arrow.dart';
 import 'package:e_commerce_app/utils/image_paths.dart';
-import 'package:e_commerce_app/utils/screen_measurements.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 class ShopPage extends StatelessWidget {
@@ -58,67 +59,34 @@ class ShopPage extends StatelessWidget {
             height: 45,
             color: Colors.white,
             alignment: Alignment.center,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  width: ScreenMeasurements.screenWidth(context) / 3,
-                  height: double.infinity,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      const Text(
-                        "Women",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 6,
-                      ),
-                      Container(
-                        width: double.infinity,
-                        height: 4,
-                        color: Colors.red,
-                      ),
-                    ],
+            child: Consumer<SalesTabProvider>(
+              builder: (context, salesTabProvider, child) => Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SalesTab(
+                    onTap: () {
+                      salesTabProvider.changeTabNumber(0);
+                    },
+                    tabNumber: 0,
+                    tabText: "Women",
                   ),
-                ),
-                Container(
-                  width: 100,
-                  height: double.infinity,
-                  child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Men",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      )
-                    ],
+                  SalesTab(
+                    onTap: () {
+                      salesTabProvider.changeTabNumber(1);
+                    },
+                    tabNumber: 1,
+                    tabText: "Men",
                   ),
-                ),
-                Container(
-                  width: ScreenMeasurements.screenWidth(context) / 3,
-                  height: double.infinity,
-                  child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Kids",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ],
+                  SalesTab(
+                    onTap: () {
+                      salesTabProvider.changeTabNumber(2);
+                    },
+                    tabNumber: 2,
+                    tabText: "Kids",
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           Padding(
@@ -165,46 +133,26 @@ class ShopPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 14.0),
               child: ListView(
                 children: [
-                  Container(
-                    width: double.infinity,
-                    height: 140,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Flexible(
-                          flex: 1,
-                          child: Container(
-                            height: double.infinity,
-                            width: double.infinity,
-                            alignment: Alignment.center,
-                            child: const Text(
-                              "New",
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 1,
-                          child: Container(
-                            color: Colors.red,
-                            width: double.infinity,
-                            height: double.infinity,
-                            child: Image.asset(
-                              ImagePaths.salesNewImg,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
+                  SalesCard(
+                    imagePath: ImagePaths.salesNewImg,
+                    onTap: () {},
+                    text: "New",
+                  ),
+                  SalesCard(
+                    imagePath: ImagePaths.salesClothesImg,
+                    text: "Clothes",
+                    onTap: () {},
+                  ),
+                  SalesCard(
+                    imagePath: ImagePaths.salesShoesImg,
+                    text: "Shoes",
+                    onTap: () {},
+                  ),
+                  SalesCard(
+                    imagePath: ImagePaths.salesAccessoriesImg,
+                    text: "Accessories",
+                    onTap: () {},
+                  ),
                 ],
               ),
             ),

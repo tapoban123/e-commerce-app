@@ -49,4 +49,5 @@ class ImagePaths {
   static const String salesTop2Img = "assets/images/sales/top2.png";
   static const String salesTop3Img = "assets/images/sales/top3.png";
   static const String salesTop4Img = "assets/images/sales/top4.png";
+  static const String salesNewSvg = "assets/images/sales/sales_new_svg.svg";
 }
