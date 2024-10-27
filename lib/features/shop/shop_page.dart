@@ -1,8 +1,9 @@
 import 'package:e_commerce_app/features/home_navigation/providers/navigation_notifier.dart';
 import 'package:e_commerce_app/features/shop/provider/sales_tab_provider.dart';
-import 'package:e_commerce_app/features/shop/widgets/sales_card.dart';
+import 'package:e_commerce_app/features/shop/tab_screens/kids.dart';
+import 'package:e_commerce_app/features/shop/tab_screens/men.dart';
+import 'package:e_commerce_app/features/shop/tab_screens/women.dart';
 import 'package:e_commerce_app/features/shop/widgets/sales_tab.dart';
-import 'package:e_commerce_app/theme/custom_colors.dart';
 import 'package:e_commerce_app/utils/common/back_arrow.dart';
 import 'package:e_commerce_app/utils/image_paths.dart';
 import 'package:flutter/material.dart';
@@ -89,74 +90,16 @@ class ShopPage extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(14.0),
-            child: Column(
-              children: [
-                Container(
-                  width: double.infinity,
-                  height: 140,
-                  decoration: BoxDecoration(
-                    color: CustomColors.redColor,
-                    borderRadius: BorderRadius.circular(14),
-                  ),
-                  child: const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "SUMMER SALES",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "Upto 50% off",
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+          Expanded(
+            child: IndexedStack(
+              index: Provider.of<SalesTabProvider>(context).tabNumber,
+              children: const [
+                WomenSection(),
+                MenSection(),
+                KidsSection(),
               ],
             ),
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 14.0),
-              child: ListView(
-                children: [
-                  SalesCard(
-                    imagePath: ImagePaths.salesNewImg,
-                    onTap: () {},
-                    text: "New",
-                  ),
-                  SalesCard(
-                    imagePath: ImagePaths.salesClothesImg,
-                    text: "Clothes",
-                    onTap: () {},
-                  ),
-                  SalesCard(
-                    imagePath: ImagePaths.salesShoesImg,
-                    text: "Shoes",
-                    onTap: () {},
-                  ),
-                  SalesCard(
-                    imagePath: ImagePaths.salesAccessoriesImg,
-                    text: "Accessories",
-                    onTap: () {},
-                  ),
-                ],
-              ),
-            ),
-          ),
+          )
         ],
       ),
     );

@@ -86,6 +86,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     AuthTextField(
                       controller: _passwordController,
                       labelText: "Password",
+                      obsecureText: true,
                     ),
                     const SizedBox(
                       height: 16,

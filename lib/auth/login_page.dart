@@ -83,6 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                     AuthTextField(
                       controller: _passwordController,
                       labelText: "Password",
+                      obsecureText: true,
                     ),
                     const SizedBox(
                       height: 18,
