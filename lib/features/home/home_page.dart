@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/features/home/widgets/item_card.dart';
+import 'package:e_commerce_app/utils/common/item_cards/grid_item_card.dart';
 import 'package:e_commerce_app/features/home_navigation/providers/home_notifier.dart';
 import 'package:e_commerce_app/theme/custom_colors.dart';
 import 'package:e_commerce_app/utils/image_paths.dart';
@@ -115,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
-                        ItemCard(
+                        GridItemCard(
                         imagePath: ImagePaths.blouseImg,
                         smallText: "OVS",
                         bigText: "Blouse",
@@ -124,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                         numOfStars: 4,
                         ratings: 11,
                       ),
-                      ItemCard(
+                      GridItemCard(
                         imagePath: ImagePaths.tShirtImg,
                         smallText: "Mango Boy",
                         bigText: "T-Shirt Sailing",
@@ -133,7 +133,7 @@ class _HomePageState extends State<HomePage> {
                         numOfStars: 5,
                         ratings: 26,
                       ),
-                      ItemCard(
+                      GridItemCard(
                         imagePath: ImagePaths.sportDressImg,
                         smallText: "Sitly",
                         bigText: "Sport Dress",

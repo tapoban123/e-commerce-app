@@ -50,4 +50,11 @@ class ImagePaths {
   static const String salesTop3Img = "assets/images/sales/top3.png";
   static const String salesTop4Img = "assets/images/sales/top4.png";
   static const String salesNewSvg = "assets/images/sales/sales_new_svg.svg";
+
+  static const String topsPullover = "assets/images/tops/pullover_top.png";
+  static const String blouseTop = "assets/images/tops/blouse_top.png";
+  static const String shirtTop = "assets/images/tops/shirt_top.png";
+  static const String spanishTop = "assets/images/tops/spanish_top.png";
+  static const String tShirtTop = "assets/images/tops/t_shirt_top.png";
+  static const String blouseTopSale = "assets/images/tops/blouse_sale.png";
 }

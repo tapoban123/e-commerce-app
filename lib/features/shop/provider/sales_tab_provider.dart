@@ -1,8 +1,8 @@
-import 'package:e_commerce_app/features/shop/shop_page.dart';
+import 'package:e_commerce_app/features/shop/pages/shop_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class SalesTabProvider extends ChangeNotifier {
+class SalesTabNotifier extends ChangeNotifier {
   int _tabNumber = 0;
 
   int get tabNumber => _tabNumber;
@@ -15,7 +15,7 @@ class SalesTabProvider extends ChangeNotifier {
 }
 
 Widget tabContent(BuildContext context) {
-  int currentTabNumber = Provider.of<SalesTabProvider>(context)._tabNumber;
+  int currentTabNumber = Provider.of<SalesTabNotifier>(context)._tabNumber;
 
   if (currentTabNumber == 0) {
     return const ShopPage();

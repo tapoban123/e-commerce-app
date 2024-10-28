@@ -4,7 +4,7 @@ import 'package:e_commerce_app/features/home_navigation/providers/home_notifier.
 import 'package:e_commerce_app/features/home_navigation/providers/navigation_notifier.dart';
 import 'package:e_commerce_app/features/home_navigation/widgets/navigation_icon.dart';
 import 'package:e_commerce_app/features/profile/profile_page.dart';
-import 'package:e_commerce_app/features/shop/shop_page.dart';
+import 'package:e_commerce_app/features/shop/pages/shop_page.dart';
 import 'package:e_commerce_app/utils/image_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

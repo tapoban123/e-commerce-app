@@ -1,7 +1,9 @@
+import 'package:e_commerce_app/features/shop/provider/shop_page_notifier.dart';
 import 'package:e_commerce_app/features/shop/widgets/sales_card.dart';
 import 'package:e_commerce_app/theme/custom_colors.dart';
 import 'package:e_commerce_app/utils/image_paths.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class WomenSection extends StatelessWidget {
   const WomenSection({super.key});
@@ -52,29 +54,33 @@ class WomenSection extends StatelessWidget {
         Expanded(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 14.0),
-            child: ListView(
-              children: [
-                SalesCard(
-                  imagePath: ImagePaths.salesNewImg,
-                  onTap: () {},
-                  text: "New",
-                ),
-                SalesCard(
-                  imagePath: ImagePaths.salesClothesImg,
-                  text: "Clothes",
-                  onTap: () {},
-                ),
-                SalesCard(
-                  imagePath: ImagePaths.salesShoesImg,
-                  text: "Shoes",
-                  onTap: () {},
-                ),
-                SalesCard(
-                  imagePath: ImagePaths.salesAccessoriesImg,
-                  text: "Accessories",
-                  onTap: () {},
-                ),
-              ],
+            child: Consumer<ShopPageNotifier>(
+              builder: (context, shopPageProvider, child) => ListView(
+                children: [
+                  SalesCard(
+                    imagePath: ImagePaths.salesNewImg,
+                    onTap: () {
+                      shopPageProvider.changeShopPage(1);
+                    },
+                    text: "New",
+                  ),
+                  SalesCard(
+                    imagePath: ImagePaths.salesClothesImg,
+                    text: "Clothes",
+                    onTap: () {},
+                  ),
+                  SalesCard(
+                    imagePath: ImagePaths.salesShoesImg,
+                    text: "Shoes",
+                    onTap: () {},
+                  ),
+                  SalesCard(
+                    imagePath: ImagePaths.salesAccessoriesImg,
+                    text: "Accessories",
+                    onTap: () {},
+                  ),
+                ],
+              ),
             ),
           ),
         ),

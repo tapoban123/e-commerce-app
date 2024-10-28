@@ -1,8 +1,8 @@
 import 'package:e_commerce_app/theme/custom_colors.dart';
-import 'package:e_commerce_app/utils/image_paths.dart';
+import 'package:e_commerce_app/utils/common/star_generate_method.dart';
 import 'package:flutter/material.dart';
 
-class ItemCard extends StatefulWidget {
+class GridItemCard extends StatefulWidget {
   final String imagePath;
   final String smallText;
   final String bigText;
@@ -15,7 +15,7 @@ class ItemCard extends StatefulWidget {
   final String? oldPrice;
   final String? newPrice;
 
-  const ItemCard({
+  const GridItemCard({
     super.key,
     required this.imagePath,
     required this.smallText,
@@ -31,28 +31,10 @@ class ItemCard extends StatefulWidget {
   });
 
   @override
-  State<ItemCard> createState() => _ItemCardState();
+  State<GridItemCard> createState() => _GridItemCardState();
 }
 
-class _ItemCardState extends State<ItemCard> {
-  List<Image> generateRatingStars() {
-    final starList = List.generate(
-      widget.numOfStars,
-      (index) => Image.asset(
-        ImagePaths.coloredStar,
-        height: 15,
-      ),
-    );
-
-    if (widget.numOfStars < 5) {
-      while (starList.length < 5) {
-        starList.add(Image.asset(ImagePaths.star));
-      }
-    }
-
-    return starList;
-  }
-
+class _GridItemCardState extends State<GridItemCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -113,7 +95,7 @@ class _ItemCardState extends State<ItemCard> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Row(
-                    children: generateRatingStars(),
+                    children: generateRatingStars(widget.numOfStars),
                   ),
                   Text(
                     "(${widget.ratings})",

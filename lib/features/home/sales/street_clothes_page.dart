@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/features/home/widgets/item_card.dart';
+import 'package:e_commerce_app/utils/common/item_cards/grid_item_card.dart';
 import 'package:e_commerce_app/features/home_navigation/providers/home_notifier.dart';
 import 'package:e_commerce_app/utils/common/back_arrow.dart';
 import 'package:e_commerce_app/utils/image_paths.dart';
@@ -101,7 +101,7 @@ class StreetClothesPage extends StatelessWidget {
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      ItemCard(
+                      GridItemCard(
                         imagePath: ImagePaths.eveningDressImg,
                         smallText: "Dorothy Perkins",
                         bigText: "Evening Dress",
@@ -113,7 +113,7 @@ class StreetClothesPage extends StatelessWidget {
                         discount: "-20%",
                         ratings: 10,
                       ),
-                      ItemCard(
+                      GridItemCard(
                         imagePath: ImagePaths.sportDressImg,
                         smallText: "Sitlly",
                         bigText: "Sport Dress",
@@ -125,7 +125,7 @@ class StreetClothesPage extends StatelessWidget {
                         ratings: 5,
                         discount: "-15%",
                       ),
-                      ItemCard(
+                      GridItemCard(
                         imagePath: ImagePaths.sportDress2Img,
                         smallText: "Dorothy Perkins",
                         bigText: "Evening Dress",
@@ -168,7 +168,7 @@ class StreetClothesPage extends StatelessWidget {
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      ItemCard(
+                      GridItemCard(
                         imagePath: ImagePaths.blouseImg,
                         smallText: "OVS",
                         bigText: "Blouse",
@@ -177,7 +177,7 @@ class StreetClothesPage extends StatelessWidget {
                         numOfStars: 4,
                         ratings: 11,
                       ),
-                      ItemCard(
+                      GridItemCard(
                         imagePath: ImagePaths.tShirtImg,
                         smallText: "Mango Boy",
                         bigText: "T-Shirt Sailing",
@@ -186,7 +186,7 @@ class StreetClothesPage extends StatelessWidget {
                         numOfStars: 5,
                         ratings: 26,
                       ),
-                      ItemCard(
+                      GridItemCard(
                         imagePath: ImagePaths.sportDressImg,
                         smallText: "Sitly",
                         bigText: "Sport Dress",

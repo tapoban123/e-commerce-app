@@ -36,7 +36,7 @@ class SalesTab extends StatelessWidget {
               const SizedBox(
                 height: 6,
               ),
-              Provider.of<SalesTabProvider>(context).tabNumber == tabNumber
+              Provider.of<SalesTabNotifier>(context).tabNumber == tabNumber
                   ? Container(
                       width: double.infinity,
                       height: 4,
