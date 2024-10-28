@@ -2,6 +2,7 @@ import "package:e_commerce_app/features/home_navigation/navigation_controller.da
 import "package:e_commerce_app/features/home_navigation/providers/home_notifier.dart";
 import "package:e_commerce_app/features/home_navigation/providers/navigation_notifier.dart";
 import "package:e_commerce_app/features/shop/provider/category_item_data_notifier.dart";
+import "package:e_commerce_app/features/shop/provider/item_layout_notifier.dart";
 import "package:e_commerce_app/features/shop/provider/sales_tab_provider.dart";
 import "package:e_commerce_app/features/shop/provider/shop_page_notifier.dart";
 import "package:e_commerce_app/theme/custom_colors.dart";
@@ -42,6 +43,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => CategoryItemDataNotifier(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => ItemLayoutNotifier(),
         ),
       ],
       builder: (context, child) => MaterialApp(

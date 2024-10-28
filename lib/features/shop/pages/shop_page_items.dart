@@ -1,4 +1,7 @@
+import 'package:e_commerce_app/features/shop/layout/grid_layout.dart';
+import 'package:e_commerce_app/features/shop/layout/list_layout.dart';
 import 'package:e_commerce_app/features/shop/provider/category_item_data_notifier.dart';
+import 'package:e_commerce_app/features/shop/provider/item_layout_notifier.dart';
 import 'package:e_commerce_app/features/shop/provider/shop_page_notifier.dart';
 import 'package:e_commerce_app/features/shop/widgets/items_view_options.dart';
 import 'package:e_commerce_app/features/shop/widgets/shop_page_appbar.dart';
@@ -77,18 +80,13 @@ class ShopPageItems extends StatelessWidget {
         Expanded(
             child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: ListView.builder(
-            itemCount: categoryData.length,
-            itemBuilder: (context, index) {
-              final eachItem = categoryData[index];
-              return ListItemCard(
-                imagePath: eachItem['imagePath'],
-                itemSmallText: eachItem['smallText'],
-                itemTitle: eachItem['bigText'],
-                numberOfStars: eachItem["numOfStars"],
-                price: eachItem["price"],
-                isFavorite: eachItem["favorite"],
-              );
+          child: Consumer<ItemLayoutNotifier>(
+            builder: (context, itemLayoutProvider, child) {
+              if (itemLayoutProvider.gridView) {
+                return GridLayout(categoryData: categoryData);
+              } else {
+                return ListLayout(categoryData: categoryData);
+              }
             },
           ),
         ))

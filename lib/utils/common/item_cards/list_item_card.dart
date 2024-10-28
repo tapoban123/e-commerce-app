@@ -98,23 +98,26 @@ class ListItemCard extends StatelessWidget {
               child: Material(
                 elevation: 2.5,
                 borderRadius: BorderRadius.circular(50),
-                child: Container(
-                  width: 50,
-                  height: 50,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white,
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    width: 50,
+                    height: 50,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white,
+                    ),
+                    alignment: Alignment.center,
+                    child: isFavorite
+                        ? const Icon(
+                            CupertinoIcons.heart_fill,
+                            color: CustomColors.redColor,
+                          )
+                        : const Icon(
+                            CupertinoIcons.heart,
+                            color: CustomColors.greyTextColor,
+                          ),
                   ),
-                  alignment: Alignment.center,
-                  child: isFavorite
-                      ? const Icon(
-                          CupertinoIcons.heart_fill,
-                          color: CustomColors.redColor,
-                        )
-                      : const Icon(
-                          CupertinoIcons.heart,
-                          color: CustomColors.greyTextColor,
-                        ),
                 ),
               ),
             )
