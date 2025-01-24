@@ -50,6 +50,7 @@ class MyApp extends StatelessWidget {
       ],
       builder: (context, child) => MaterialApp(
         title: "E-Commerce App",
+        themeMode: ThemeMode.dark,
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           useMaterial3: true,

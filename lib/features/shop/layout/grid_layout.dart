@@ -14,26 +14,22 @@ class GridLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       itemCount: 2,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         mainAxisSpacing: 8.0,
+        childAspectRatio: 0.6,
       ),
       itemBuilder: (context, index) {
         final eachItem = categoryData[index];
-        Text(
-          "Hello World",
-          style: TextStyle(
-            color: Colors.black,
-          ),
+
+        return GridItemCard(
+          imagePath: eachItem['imagePath'],
+          smallText: eachItem['smallText'],
+          bigText: eachItem['bigText'],
+          numOfStars: eachItem["numOfStars"],
+          price: eachItem["price"].toString(),
+          onTap: () {},
         );
-        // return GridItemCard(
-        //   imagePath: eachItem['imagePath'],
-        //   smallText: eachItem['smallText'],
-        //   bigText: eachItem['bigText'],
-        //   numOfStars: eachItem["numOfStars"],
-        //   price: eachItem["price"].toString(),
-        //   onTap: () {},
-        // );
       },
     );
   }
